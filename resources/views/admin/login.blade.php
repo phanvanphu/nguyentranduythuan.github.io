@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href=""><b>Admin</b>LTE</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -76,8 +76,8 @@
     </div>
     <!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    <a href="{{ url('password/reset') }}">I forgot my password</a><br>
+    <a href="{{ url('register') }}" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->
@@ -90,6 +90,7 @@
 <script src="{{ asset('backend/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ asset('backend/plugins/iCheck/icheck.min.js') }}"></script>
+<script src="{{ asset('backend/js/admin.js') }}"></script>
 <script>
   $(function () {
     $('input').iCheck({
