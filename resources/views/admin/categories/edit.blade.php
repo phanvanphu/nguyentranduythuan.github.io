@@ -54,7 +54,7 @@
 		                    <div class="form-group">
 		                		<label for="inputEmail3" class="col-sm-2 control-label">Category Title</label>
 			                  	<div class="col-sm-10">
-			                    	<input type="text" class="form-control" id="name" name="category_title" placeholder="Please enter Category name" value="{{ old('category_title') }}">
+			                    	<input type="text" class="form-control" id="name" name="category_title" placeholder="Please enter Category name" value="{{ old('category_title') ?? $category->title }}">
 			                  	</div>
 		                	</div>
 		                	<div class="form-group">

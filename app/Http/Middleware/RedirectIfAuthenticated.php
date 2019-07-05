@@ -18,11 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            return redirect('home');
         }
-        // else {
-        //     return redirect('admin')->with('flash_message','Please login to access !');
-        // }
+        else {
+            return redirect('admin')->with('flash_message','Please login to access !');
+        }
 
         return $next($request);
     }

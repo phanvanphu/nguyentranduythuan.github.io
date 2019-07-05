@@ -36,8 +36,16 @@ Route::get('logout','AdminController@logout');
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+//Route::get('san-pham/{san-pham}','HomeController@sanpham');
 
-Auth::routes();
+// Route::get(['prefix' => 'san-pham'])->group(function(){
+// 	Route::get('danh-sach','ProductController@danhsach');
+// });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('san-pham')->group(function(){
+	Route::get('danh-sach','ProductController@danhsach');
+	Route::get('chi-tiet/{id}','ProductController@chitiet')->name('chitiet');
+	Route::get('them-san-pham','ProductController@GetThem');
+	Route::post('them-san-pham','ProductController@PostThem')->name('them');
+});
